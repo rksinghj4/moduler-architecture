@@ -42,6 +42,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":sdklite"))
+
     implementation(libs.squareup.retrofit2)
     //Gson converter
     implementation(libs.squareup.retrofit2.converter.gson)

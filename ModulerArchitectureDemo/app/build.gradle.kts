@@ -44,7 +44,10 @@ android {
 }
 
 dependencies {
-
+    //since controller module is already added in each feature module
+    //implementation(project(":sdklite"))
+    implementation(project(":paymentfeature"))
+    implementation(project(":profilefeature"))
     //
     implementation(libs.squareup.retrofit2)
     //Gson converter

@@ -43,6 +43,9 @@ android {
 }
 
 dependencies {
+    //Using api so that controller module(i.e sdklite) can be injected in app module.
+    //Each feature module is added in app module
+    api(project(":sdklite"))
     //
     implementation(libs.squareup.retrofit2)
     //Gson converter
@@ -64,7 +67,6 @@ dependencies {
 // Retrofit converter
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
     debugImplementation("io.nerdythings:okhttp-profiler:1.1.1")
-
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
