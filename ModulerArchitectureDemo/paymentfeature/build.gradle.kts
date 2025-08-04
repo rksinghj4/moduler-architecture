@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace = "com.raj.profilefeature"
+    namespace = "com.raj.paymentfeature"
     compileSdk = 35
 
     defaultConfig {
@@ -39,11 +39,9 @@ android {
     buildFeatures {
         compose = true
     }
-
 }
 
 dependencies {
-    //
     implementation(libs.squareup.retrofit2)
     //Gson converter
     implementation(libs.squareup.retrofit2.converter.gson)
@@ -64,7 +62,6 @@ dependencies {
 // Retrofit converter
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
     debugImplementation("io.nerdythings:okhttp-profiler:1.1.1")
-
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
