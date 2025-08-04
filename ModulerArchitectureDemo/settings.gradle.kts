@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ModulerArchitecture"
 include(":app")
- 
+include(":profilefeature")
