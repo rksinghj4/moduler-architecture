@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.dagger.hilt)
     //To import androidx.hilt.navigation.compose.hiltViewModel
     implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.activity)
     ksp(libs.dagger.hilt.android.compiler)
     //To import coil.compose.AsyncImage, coil3 has multiplatform support
     implementation(libs.coil.compose)
@@ -64,6 +65,15 @@ dependencies {
 // Retrofit converter
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
     debugImplementation("io.nerdythings:okhttp-profiler:1.1.1")
+
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

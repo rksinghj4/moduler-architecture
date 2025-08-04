@@ -1,5 +1,6 @@
 package com.raj.modulerarchitecture
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -17,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.raj.modulerarchitecture.ui.theme.ModulerArchitectureTheme
+import com.raj.sdklite.ControllerApplication
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +28,8 @@ class MainActivity : ComponentActivity() {
             ModulerArchitectureTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     MainScreen(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
+                        fromActivity = this
                     )
                 }
             }
@@ -35,7 +38,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainScreen(modifier: Modifier = Modifier) {
+fun MainScreen(modifier: Modifier = Modifier, fromActivity: Activity) {
     Column(
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.SpaceEvenly,
@@ -43,7 +46,8 @@ fun MainScreen(modifier: Modifier = Modifier) {
     ) {
         Button(modifier = Modifier.wrapContentSize(),
             onClick = {
-
+                ControllerApplication.singleton().controllerInterface
+                    .paymentFeatureInterface.showPaymentScreen(fromActivity)
             }) {
             Text(
                 text = "Profile Module",
@@ -54,7 +58,8 @@ fun MainScreen(modifier: Modifier = Modifier) {
         Button(
             modifier = Modifier.wrapContentSize(),
             onClick = {
-
+                ControllerApplication.singleton().controllerInterface
+                    .profileFeatureInterface.showProfileScreen(fromActivity)
             }) {
             Text(
                 text = "Payment Module",
@@ -68,6 +73,6 @@ fun MainScreen(modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     ModulerArchitectureTheme {
-        MainScreen()
+        //MainScreen()
     }
 }
