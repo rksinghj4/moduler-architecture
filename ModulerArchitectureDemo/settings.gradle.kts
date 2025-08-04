@@ -23,3 +23,4 @@ rootProject.name = "ModulerArchitecture"
 include(":app")
 include(":profilefeature")
 include(":paymentfeature")
+include(":sdklite")
