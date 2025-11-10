@@ -17,3 +17,4 @@ class ModulerApplication : ControllerApplication() {
         controllerInterface = controllerInterfaceImpl
     }
 }
+

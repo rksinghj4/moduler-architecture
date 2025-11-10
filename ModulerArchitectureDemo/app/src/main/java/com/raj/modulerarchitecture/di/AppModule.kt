@@ -26,7 +26,7 @@ abstract class AppModule {
         paymentFeatureInterfaceImpl: PaymentFeatureInterfaceImpl
     ): PaymentFeatureInterface
 
-    //ProfileFeatureInterface - part of sdklite, which act as controller module
+    //ProfileFeatureInterface - part of sdklite(controller module), which act as controller module
     //ProfileFeatureInterfaceImpl - part of ProfileFeature module
     @Binds
     abstract fun provideProfileFeatureInterfaceImpl(
